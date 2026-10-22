@@ -1,525 +1,224 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#087e8b">
-  <meta name="description" content="Conheça a Pousada Futuro, no Condomínio Sapê, em Ubatuba - SP. Veja nossas acomodações e solicite sua reserva pelo WhatsApp.">
+  <meta name="description" content="Conheça a Pousada Futuro em Ubatuba, consulte acomodações, valores por temporada e disponibilidade pelo WhatsApp.">
   <title>Pousada Futuro | Ubatuba - SP</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Pousada Futuro - início">
+      <span class="brand-mark" aria-hidden="true">☼</span>
+      <span><strong>Pousada Futuro</strong><small>UBATUBA • SÃO PAULO</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="mainNav">
+      <a href="#acomodacoes">Acomodações</a>
+      <a href="#areas-comuns">Áreas comuns</a>
+      <a href="#experiencia">A pousada</a>
+      <a href="#localizacao">Localização</a>
+      <a class="nav-cta" href="#reservar">Consultar reserva <span>↗</span></a>
+    </nav>
+  </header>
 
-<header class="site-header">
-  <a class="brand" href="#inicio" aria-label="Pousada Futuro - início">
-    <span class="brand-mark" aria-hidden="true"></span>
-    <span>
-      <strong>Pousada Futuro</strong>
-      <small>UBATUBA • SÃO PAULO</small>
-    </span>
-  </a>
+  <main>
+    <section class="hero hero-banner-only" id="inicio" aria-label="Pousada Futuro">
+      <div class="hero-image" role="img" aria-label="Banner da Pousada Futuro"></div>
+    </section>
 
-  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
-
-  <nav class="nav" id="mainNav">
-    <a href="#acomodacoes">Acomodações</a>
-    <a href="#areas-comuns">Áreas comuns</a>
-    <a href="#experiencia">A pousada</a>
-    <a href="#localizacao">Localização</a>
-    <a class="nav-cta" href="#reservar">Consultar reserva <span>↗</span></a>
-  </nav>
-</header>
-
-<main>
-
-  <!-- BANNER -->
-  <section class="hero" id="inicio" aria-label="Banner da Pousada Futuro">
-    <img class="hero-image" src="banner.jpeg" alt="Banner da Pousada Futuro">
-  </section>
-
-  <!-- SOBRE A POUSADA -->
-  <section class="intro section-wrap" id="experiencia">
-    <div class="intro-label">
-      <span class="mini-line"></span>
-      UM LUGAR PARA DESACELERAR
-    </div>
-
-    <div class="intro-copy">
-      <h2>Seu tempo.<br><em>Seu lugar.</em></h2>
-
-      <div>
-        <p>
-          Na Pousada Futuro, cada estadia é um convite para aproveitar
-          o melhor de Ubatuba no seu ritmo. Um espaço para recarregar
-          as energias, curtir a cidade e colecionar momentos especiais.
-        </p>
-
-        <p class="muted">
-          Estamos preparando cada detalhe para receber você com carinho.
-        </p>
-
-        <a class="underlined-link" href="#reservar">
-          Vamos conversar sobre sua viagem <span>↗</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="feature-strip">
-      <div class="feature">
-        <span class="feature-icon">☀</span>
+    <section class="intro section-wrap" id="experiencia">
+      <div class="intro-label"><span class="mini-line"></span> UM LUGAR PARA DESACELERAR</div>
+      <div class="intro-copy">
+        <h2>Seu tempo.<br><em>Seu lugar.</em></h2>
         <div>
-          <strong>Clima de férias</strong>
-          <small>Leveza do começo ao fim</small>
+          <p>Na Pousada Futuro, cada estadia é um convite para aproveitar o melhor de Ubatuba no seu ritmo. Um espaço para recarregar as energias, curtir a cidade e colecionar momentos especiais.</p>
+          <p class="muted">Estamos preparando cada detalhe para receber você com carinho.</p>
+          <a class="underlined-link" href="#reservar">Vamos conversar sobre sua viagem <span>↗</span></a>
         </div>
       </div>
-
-      <div class="feature">
-        <span class="feature-icon">⌂</span>
-        <div>
-          <strong>Conforto para descansar</strong>
-          <small>Seu cantinho em Ubatuba</small>
-        </div>
+      <div class="feature-strip">
+        <div class="feature"><span class="feature-icon">☀</span><div><strong>Clima de férias</strong><small>Leveza do começo ao fim</small></div></div>
+        <div class="feature"><span class="feature-icon">⌂</span><div><strong>Conforto para descansar</strong><small>Seu cantinho em Ubatuba</small></div></div>
+        <div class="feature"><span class="feature-icon">♡</span><div><strong>Atendimento próximo</strong><small>Fale direto com a pousada</small></div></div>
       </div>
+    </section>
 
-      <div class="feature">
-        <span class="feature-icon">♡</span>
-        <div>
-          <strong>Atendimento próximo</strong>
-          <small>Fale direto com a pousada</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ACOMODAÇÕES -->
-  <section class="rooms-section" id="acomodacoes">
-    <div class="section-wrap">
-
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow dark"><span></span> ENCONTRE SEU CANTINHO</p>
-          <h2>Acomodações para<br><em>ficar de boa.</em></h2>
+    <section class="rooms-section" id="acomodacoes">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow dark"><span></span> ENCONTRE SEU CANTINHO</p><h2>Acomodações para<br><em>ficar de boa.</em></h2></div>
+          <p>Escolha sua acomodação, informe as datas desejadas e consulte a disponibilidade e o valor para o período da sua viagem.</p>
         </div>
 
-        <p>
-          Escolha a opção ideal para sua viagem. Consulte valores
-          e disponibilidade diretamente com a nossa equipe.
-        </p>
-      </div>
-
-      <div class="room-grid">
-
-        <!-- BANGALÔ -->
-        <article class="room-card">
-          <div class="room-gallery">
-            <img class="room-main-photo" src="bangalo.jpg" alt="Bangalô da Pousada Futuro" loading="lazy">
-
-            <div class="room-thumbnails">
-              <img src="bangalo1.jpg" alt="Bangalô - foto 2" loading="lazy">
-              <img src="bangalo2.jpg" alt="Bangalô - foto 3" loading="lazy">
-              <img src="bangalo3.jpg" alt="Bangalô - foto 4" loading="lazy">
+        <div class="room-grid room-grid-four">
+          <article class="room-card" data-room-card="Bangalô">
+            <div class="room-gallery" data-gallery>
+              <img class="room-gallery-main" src="bangalo.jpg" alt="Bangalô da Pousada Futuro" loading="lazy">
+              <span class="room-tag">BANGALÔ</span>
+              <div class="room-thumbnails" aria-label="Fotos do Bangalô">
+                <button type="button" class="room-thumb active" data-image="bangalo.jpg" aria-label="Ver foto 1 do Bangalô"><img src="bangalo.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="bangalo1.jpg" aria-label="Ver foto 2 do Bangalô"><img src="bangalo1.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="bangalo2.jpg" aria-label="Ver foto 3 do Bangalô"><img src="bangalo2.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="bangalo3.jpg" aria-label="Ver foto 4 do Bangalô"><img src="bangalo3.jpg" alt=""></button>
+              </div>
             </div>
+            <div class="room-details">
+              <div class="room-title-row"><h3>Bangalô</h3><span class="room-number">01</span></div>
+              <p>Um espaço aconchegante para aproveitar dias de descanso em Ubatuba.</p>
+              <div class="room-meta"><span>20 m²</span><span>Varanda térrea</span><span>Ar-condicionado</span><span>Banheiro privativo</span><span>TV de tela plana</span></div>
+              <div class="room-price"><span>A partir de</span><strong>R$ 550,00</strong><small>por diária · sujeito à temporada</small></div>
+              <a href="#reservar" class="room-link room-consult" data-room="Bangalô">Consultar datas e valor <span>→</span></a>
+            </div>
+          </article>
 
-            <span class="room-tag">BANGALÔ</span>
+          <article class="room-card" data-room-card="Quarto Varanda">
+            <div class="room-gallery" data-gallery>
+              <img class="room-gallery-main" src="varanda1.jpg" alt="Quarto Varanda da Pousada Futuro" loading="lazy">
+              <span class="room-tag">QUARTO VARANDA</span>
+              <div class="room-thumbnails" aria-label="Fotos do Quarto Varanda">
+                <button type="button" class="room-thumb active" data-image="varanda1.jpg" aria-label="Ver foto 1 do Quarto Varanda"><img src="varanda1.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="varanda2.jpg" aria-label="Ver foto 2 do Quarto Varanda"><img src="varanda2.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="varanda3.jpg" aria-label="Ver foto 3 do Quarto Varanda"><img src="varanda3.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="varanda4.jpg" aria-label="Ver foto 4 do Quarto Varanda"><img src="varanda4.jpg" alt=""></button>
+              </div>
+            </div>
+            <div class="room-details">
+              <div class="room-title-row"><h3>Quarto Varanda</h3><span class="room-number">02</span></div>
+              <p>Uma acomodação prática e acolhedora para curtir a estadia.</p>
+              <div class="room-meta"><span>15 m²</span><span>Varanda térrea</span><span>Ar-condicionado</span><span>Banheiro privativo</span><span>TV de tela plana</span></div>
+              <div class="room-price"><span>A partir de</span><strong>R$ 140,00</strong><small>por diária · sujeito à temporada</small></div>
+              <a href="#reservar" class="room-link room-consult" data-room="Quarto Varanda">Consultar datas e valor <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="room-card" data-room-card="Quarto Casal">
+            <div class="room-gallery" data-gallery>
+              <img class="room-gallery-main" src="casal1.jpg" alt="Quarto Casal da Pousada Futuro" loading="lazy">
+              <span class="room-tag">QUARTO CASAL</span>
+              <div class="room-thumbnails" aria-label="Fotos do Quarto Casal">
+                <button type="button" class="room-thumb active" data-image="casal1.jpg" aria-label="Ver foto 1 do Quarto Casal"><img src="casal1.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="casal2.jpg" aria-label="Ver foto 2 do Quarto Casal"><img src="casal2.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="casal3.jpg" aria-label="Ver foto 3 do Quarto Casal"><img src="casal3.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="casal4.jpg" aria-label="Ver foto 4 do Quarto Casal"><img src="casal4.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="casal5.jpg" aria-label="Ver foto 5 do Quarto Casal"><img src="casal5.jpg" alt=""></button>
+              </div>
+            </div>
+            <div class="room-details">
+              <div class="room-title-row"><h3>Quarto Casal</h3><span class="room-number">03</span></div>
+              <p>Ideal para casais que procuram conforto e tranquilidade.</p>
+              <div class="room-meta"><span>13 m²</span><span>1 cama de casal</span><span>Ar-condicionado</span><span>Banheiro privativo</span><span>TV de tela plana</span></div>
+              <div class="room-price"><span>A partir de</span><strong>R$ 160,00</strong><small>por diária · sujeito à temporada</small></div>
+              <a href="#reservar" class="room-link room-consult" data-room="Quarto Casal">Consultar datas e valor <span>→</span></a>
+            </div>
+          </article>
+
+          <article class="room-card" data-room-card="Quarto Família">
+            <div class="room-gallery" data-gallery>
+              <img class="room-gallery-main" src="familia1.jpg" alt="Quarto Família da Pousada Futuro" loading="lazy">
+              <span class="room-tag">QUARTO FAMÍLIA</span>
+              <div class="room-thumbnails" aria-label="Fotos do Quarto Família">
+                <button type="button" class="room-thumb active" data-image="familia1.jpg" aria-label="Ver foto 1 do Quarto Família"><img src="familia1.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="familia2.jpg" aria-label="Ver foto 2 do Quarto Família"><img src="familia2.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="familia3.jpg" aria-label="Ver foto 3 do Quarto Família"><img src="familia3.jpg" alt=""></button>
+                <button type="button" class="room-thumb" data-image="familia4.jpg" aria-label="Ver foto 4 do Quarto Família"><img src="familia4.jpg" alt=""></button>
+              </div>
+            </div>
+            <div class="room-details">
+              <div class="room-title-row"><h3>Quarto Família</h3><span class="room-number">04</span></div>
+              <p>Mais espaço para aproveitar a viagem com a família.</p>
+              <div class="room-meta"><span>30 m²</span><span>1 cama de casal</span><span>1 cama de solteiro</span><span>Ar-condicionado</span><span>Banheiro privativo</span><span>TV de tela plana</span></div>
+              <div class="room-price"><span>A partir de</span><strong>R$ 300,00</strong><small>por diária · sujeito à temporada</small></div>
+              <a href="#reservar" class="room-link room-consult" data-room="Quarto Família">Consultar datas e valor <span>→</span></a>
+            </div>
+          </article>
+        </div>
+        <p class="room-disclaimer">Os valores exibidos são referências iniciais por diária. A tarifa final depende das datas, da temporada, da quantidade de hóspedes e da confirmação da pousada. A solicitação pelo WhatsApp não confirma automaticamente a reserva.</p>
+      </div>
+    </section>
+
+    <section class="common-areas-section" id="areas-comuns">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow dark"><span></span> UM POUCO DA NOSSA POUSADA</p><h2>Espaços para<br><em>aproveitar.</em></h2></div>
+          <p>Conheça alguns dos ambientes da Pousada Futuro e imagine seus próximos dias de descanso.</p>
+        </div>
+        <div class="common-gallery" data-gallery>
+          <img class="common-gallery-main room-gallery-main" src="areacomum.jpg" alt="Área comum da Pousada Futuro" loading="lazy">
+          <div class="common-gallery-thumbnails room-thumbnails" aria-label="Fotos das áreas comuns">
+            <button type="button" class="room-thumb active" data-image="areacomum.jpg" aria-label="Ver área comum foto 1"><img src="areacomum.jpg" alt=""></button>
+            <button type="button" class="room-thumb" data-image="areacomum1.jpg" aria-label="Ver área comum foto 2"><img src="areacomum1.jpg" alt=""></button>
+            <button type="button" class="room-thumb" data-image="areacomum2.jpg" aria-label="Ver área comum foto 3"><img src="areacomum2.jpg" alt=""></button>
+            <button type="button" class="room-thumb" data-image="areacomum3.jpg" aria-label="Ver área comum foto 4"><img src="areacomum3.jpg" alt=""></button>
+            <button type="button" class="room-thumb" data-image="areacomum4.jpg" aria-label="Ver área comum foto 5"><img src="areacomum4.jpg" alt=""></button>
           </div>
-
-          <div class="room-details">
-            <div class="room-title-row">
-              <h3>Bangalô</h3>
-              <span class="room-number">01</span>
-            </div>
-
-            <p>Um cantinho especial para aproveitar sua estadia em Ubatuba.</p>
-
-            <div class="room-amenities">
-              <span>📐 20 m²</span>
-              <span>🌿 Varanda térrea</span>
-              <span>❄️ Ar-condicionado</span>
-              <span>🚿 Banheiro privativo</span>
-              <span>📺 TV de tela plana</span>
-              <span>🏡 Bangalô inteiro</span>
-            </div>
-
-            <div class="room-meta">
-              <span>♧ Aconchego</span>
-              <span>♧ Clima tranquilo</span>
-            </div>
-
-            <div class="room-bottom">
-              <span class="price-label">
-                Diária
-                <strong class="price-placeholder">Consulte</strong>
-              </span>
-
-              <a href="#reservar" class="room-link" data-room="Bangalô">
-                Consultar <span>→</span>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- QUARTO VARANDA -->
-        <article class="room-card">
-          <div class="room-gallery">
-            <img class="room-main-photo" src="varanda1.jpg" alt="Quarto Varanda da Pousada Futuro" loading="lazy">
-
-            <div class="room-thumbnails">
-              <img src="varanda2.jpg" alt="Quarto Varanda - foto 2" loading="lazy">
-              <img src="varanda3.jpg" alt="Quarto Varanda - foto 3" loading="lazy">
-              <img src="varanda4.jpg" alt="Quarto Varanda - foto 4" loading="lazy">
-            </div>
-
-            <span class="room-tag">QUARTO VARANDA</span>
-          </div>
-
-          <div class="room-details">
-            <div class="room-title-row">
-              <h3>Quarto Varanda</h3>
-              <span class="room-number">02</span>
-            </div>
-
-            <p>Uma opção para descansar e curtir sua viagem com tranquilidade.</p>
-
-            <div class="room-amenities">
-              <span>📐 15 m²</span>
-              <span>🌿 Varanda térrea</span>
-              <span>❄️ Ar-condicionado</span>
-              <span>🚿 Banheiro privativo</span>
-              <span>📺 TV de tela plana</span>
-              <span>🔑 Suíte privativa</span>
-            </div>
-
-            <div class="room-meta">
-              <span>♧ Conforto</span>
-              <span>♧ Varanda</span>
-            </div>
-
-            <div class="room-bottom">
-              <span class="price-label">
-                Diária
-                <strong class="price-placeholder">Consulte</strong>
-              </span>
-
-              <a href="#reservar" class="room-link" data-room="Quarto Varanda">
-                Consultar <span>→</span>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- QUARTO CASAL -->
-        <article class="room-card">
-          <div class="room-gallery">
-            <img class="room-main-photo" src="casal1.jpg" alt="Quarto Casal da Pousada Futuro" loading="lazy">
-
-            <div class="room-thumbnails">
-              <img src="casal2.jpg" alt="Quarto Casal - foto 2" loading="lazy">
-              <img src="casal3.jpg" alt="Quarto Casal - foto 3" loading="lazy">
-              <img src="casal4.jpg" alt="Quarto Casal - foto 4" loading="lazy">
-              <img src="casal5.jpg" alt="Quarto Casal - foto 5" loading="lazy">
-            </div>
-
-            <span class="room-tag">PARA DUAS PESSOAS</span>
-          </div>
-
-          <div class="room-details">
-            <div class="room-title-row">
-              <h3>Quarto Casal</h3>
-              <span class="room-number">03</span>
-            </div>
-
-            <p>Uma opção aconchegante para casais e pequenas escapadas.</p>
-
-            <div class="room-amenities">
-              <span>📐 13 m²</span>
-              <span>🛏️ 1 cama de casal</span>
-              <span>🌿 Varanda térrea</span>
-              <span>❄️ Ar-condicionado</span>
-              <span>🚿 Banheiro privativo</span>
-              <span>📺 TV de tela plana</span>
-            </div>
-
-            <div class="room-meta">
-              <span>♧ Conforto</span>
-              <span>♧ Clima tranquilo</span>
-            </div>
-
-            <div class="room-bottom">
-              <span class="price-label">
-                Diária
-                <strong class="price-placeholder">Consulte</strong>
-              </span>
-
-              <a href="#reservar" class="room-link" data-room="Quarto Casal">
-                Consultar <span>→</span>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- QUARTO FAMÍLIA -->
-        <article class="room-card">
-          <div class="room-gallery">
-            <img class="room-main-photo" src="familia1.jpg" alt="Quarto Família da Pousada Futuro" loading="lazy">
-
-            <div class="room-thumbnails">
-              <img src="familia2.jpg" alt="Quarto Família - foto 2" loading="lazy">
-              <img src="familia3.jpg" alt="Quarto Família - foto 3" loading="lazy">
-              <img src="familia4.jpg" alt="Quarto Família - foto 4" loading="lazy">
-            </div>
-
-            <span class="room-tag">PARA VIAJAR EM FAMÍLIA</span>
-          </div>
-
-          <div class="room-details">
-            <div class="room-title-row">
-              <h3>Quarto Família</h3>
-              <span class="room-number">04</span>
-            </div>
-
-            <p>Mais espaço para curtir a viagem ao lado de quem importa.</p>
-
-            <div class="room-amenities">
-              <span>📐 30 m²</span>
-              <span>🛏️ 1 cama de casal</span>
-              <span>🛏️ 1 cama de solteiro</span>
-              <span>❄️ Ar-condicionado</span>
-              <span>🚿 Banheiro privativo</span>
-              <span>📺 TV de tela plana</span>
-            </div>
-
-            <div class="room-meta">
-              <span>♧ Espaço extra</span>
-              <span>♧ Para compartilhar</span>
-            </div>
-
-            <div class="room-bottom">
-              <span class="price-label">
-                Diária
-                <strong class="price-placeholder">Consulte</strong>
-              </span>
-
-              <a href="#reservar" class="room-link" data-room="Quarto Família">
-                Consultar <span>→</span>
-              </a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <p class="room-disclaimer">
-        Valores e disponibilidade são confirmados diretamente pela pousada durante o atendimento.
-      </p>
-    </div>
-  </section>
-
-  <!-- ÁREAS COMUNS -->
-  <section class="common-section section-wrap" id="areas-comuns">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow dark"><span></span> ESPAÇOS PARA COMPARTILHAR</p>
-        <h2>Conheça as<br><em>áreas comuns.</em></h2>
-      </div>
-
-      <p>
-        Veja um pouco mais dos espaços da pousada para aproveitar sua estadia.
-      </p>
-    </div>
-
-    <div class="common-gallery">
-      <img src="areacomum.jpg" alt="Área comum da pousada" loading="lazy">
-      <img src="areacomum1.jpg" alt="Área comum da pousada - foto 2" loading="lazy">
-      <img src="areacomum2.jpg" alt="Área comum da pousada - foto 3" loading="lazy">
-      <img src="areacomum3.jpg" alt="Área comum da pousada - foto 4" loading="lazy">
-      <img src="areacomum4.jpg" alt="Área comum da pousada - foto 5" loading="lazy">
-    </div>
-  </section>
-
-  <!-- FRASE E IMAGEM -->
-  <section class="quote-section">
-    <div class="quote-image" role="img" aria-label="Área da Pousada Futuro"></div>
-
-    <div class="quote-content">
-      <span class="quote-mark">“</span>
-      <p>
-        As melhores lembranças começam quando a gente se permite parar um pouco.
-      </p>
-      <span class="quote-caption">POUSADA FUTURO · UBATUBA</span>
-    </div>
-  </section>
-
-  <!-- RESERVAS -->
-  <section class="booking-section section-wrap" id="reservar">
-    <div class="booking-copy">
-      <p class="eyebrow dark">
-        <span></span> SUA PRÓXIMA VIAGEM COMEÇA AQUI
-      </p>
-
-      <h2>Vamos reservar<br><em>seu momento?</em></h2>
-
-      <p>
-        Preencha os dados para montar uma mensagem no WhatsApp.
-        Nossa equipe confirmará a disponibilidade, o valor total
-        e as condições do sinal via Pix antes de confirmar sua reserva.
-      </p>
-
-      <div class="booking-promise"><span>✓</span> Solicitação simples e direta</div>
-      <div class="booking-promise"><span>✓</span> Confirmação manual pela pousada</div>
-      <div class="booking-promise"><span>✓</span> Sinal via Pix combinado no atendimento</div>
-    </div>
-
-    <form class="booking-form" id="bookingForm">
-      <div class="form-top">
-        <span class="form-icon">✳</span>
-        <div>
-          <h3>Consulte sua estadia</h3>
-          <p>Conte um pouquinho sobre sua viagem.</p>
         </div>
       </div>
+    </section>
 
-      <label for="guestName">Seu nome</label>
-      <input id="guestName" name="guestName" type="text" placeholder="Como podemos chamar você?" required>
+    <section class="quote-section">
+      <div class="quote-image" role="img" aria-label="Palmeiras tropicais"></div>
+      <div class="quote-content"><span class="quote-mark">“</span><p>As melhores lembranças começam quando a gente se permite parar um pouco.</p><span class="quote-caption">POUSADA FUTURO · UBATUBA</span></div>
+    </section>
 
-      <div class="form-row">
-        <div>
-          <label for="checkin">Check-in</label>
-          <input id="checkin" name="checkin" type="date" required>
+    <section class="booking-section section-wrap" id="reservar">
+      <div class="booking-copy">
+        <p class="eyebrow dark"><span></span> SUA PRÓXIMA VIAGEM COMEÇA AQUI</p>
+        <h2>Vamos reservar<br><em>seu momento?</em></h2>
+        <p>Preencha os dados para montar uma mensagem no WhatsApp. Nossa equipe confirmará a disponibilidade, o valor total e as condições do sinal via Pix antes de confirmar sua reserva.</p>
+        <div class="booking-promise"><span>✓</span> Solicitação simples e direta</div>
+        <div class="booking-promise"><span>✓</span> Confirmação manual pela pousada</div>
+        <div class="booking-promise"><span>✓</span> Sinal via Pix combinado no atendimento</div>
+      </div>
+      <form class="booking-form" id="bookingForm">
+        <div class="form-top"><span class="form-icon">✳</span><div><h3>Consulte sua estadia</h3><p>Conte um pouquinho sobre sua viagem.</p></div></div>
+        <label for="guestName">Seu nome</label>
+        <input id="guestName" name="guestName" type="text" placeholder="Como podemos chamar você?" required>
+        <div class="form-row">
+          <div><label for="checkin">Check-in</label><input id="checkin" name="checkin" type="date" required></div>
+          <div><label for="checkout">Check-out</label><input id="checkout" name="checkout" type="date" required></div>
         </div>
-        <div>
-          <label for="checkout">Check-out</label>
-          <input id="checkout" name="checkout" type="date" required>
+        <div class="form-row">
+          <div><label for="guests">Hóspedes</label><select id="guests" name="guests" required><option value="1 pessoa">1 pessoa</option><option value="2 pessoas" selected>2 pessoas</option><option value="3 pessoas">3 pessoas</option><option value="4 pessoas">4 pessoas</option><option value="5 ou mais pessoas">5 ou mais</option></select></div>
+          <div><label for="roomType">Acomodação</label><select id="roomType" name="roomType" required><option value="Ainda não sei">Ainda não sei</option><option value="Bangalô">Bangalô</option><option value="Quarto Varanda">Quarto Varanda</option><option value="Quarto Casal">Quarto Casal</option><option value="Quarto Família">Quarto Família</option></select></div>
+        </div>
+        <label for="notes">Observações <span class="optional">(opcional)</span></label>
+        <textarea id="notes" name="notes" rows="2" placeholder="Alguma necessidade ou dúvida?"></textarea>
+        <button class="button button-primary submit-button" type="submit">Enviar solicitação no WhatsApp <span>↗</span></button>
+        <p class="form-legal">O envio é uma solicitação, não uma confirmação automática. Sua reserva só será confirmada após o retorno da pousada.</p>
+        <p class="form-error" id="formError" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <section class="location-section" id="localizacao">
+      <div class="section-wrap">
+        <div class="location-heading">
+          <p class="eyebrow"><span></span> VENHA SENTIR UBATUBA</p>
+          <h2>Encontre a <em>Pousada Futuro.</em></h2>
+          <p>Confira nossa localização e trace sua rota para aproveitar dias especiais no litoral de Ubatuba.</p>
+        </div>
+        <div class="location-map">
+          <iframe src="https://maps.google.com/maps?q=-23.466736,-45.063112&z=16&output=embed" width="100%" height="420" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização da Pousada Futuro em Ubatuba"></iframe>
+        </div>
+        <div class="location-address-row">
+          <p><strong>Endereço informado:</strong><br>Av. Maria R. J. de Oliveira, 1061<br>Praia Grande — Ubatuba – SP<br>CEP 11680-000</p>
+          <a class="button button-light" href="https://www.google.com/maps/dir/?api=1&destination=-23.466736,-45.063112" target="_blank" rel="noopener noreferrer">Como chegar <span>↗</span></a>
         </div>
       </div>
+    </section>
+  </main>
 
-      <div class="form-row">
-        <div>
-          <label for="guests">Hóspedes</label>
-          <select id="guests" name="guests" required>
-            <option value="1 pessoa">1 pessoa</option>
-            <option value="2 pessoas" selected>2 pessoas</option>
-            <option value="3 pessoas">3 pessoas</option>
-            <option value="4 pessoas">4 pessoas</option>
-            <option value="5 ou mais pessoas">5 ou mais</option>
-          </select>
-        </div>
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#inicio"><span class="brand-mark">☼</span><span><strong>Pousada Futuro</strong><small>UBATUBA • SÃO PAULO</small></span></a>
+    <p>Um respiro bom no meio da vida.</p>
+    <div class="footer-links"><a href="#acomodacoes">Acomodações</a><a href="#reservar">Reservas</a><a href="#" id="footerWhatsApp">WhatsApp</a></div>
+    <small class="copyright">© <span id="year"></span> Pousada Futuro. Todos os direitos reservados.</small>
+  </footer>
 
-        <div>
-          <label for="roomType">Acomodação</label>
-          <select id="roomType" name="roomType" required>
-            <option value="Ainda não sei">Ainda não sei</option>
-            <option value="Bangalô">Bangalô</option>
-            <option value="Quarto Varanda">Quarto Varanda</option>
-            <option value="Quarto Casal">Quarto Casal</option>
-            <option value="Quarto Família">Quarto Família</option>
-          </select>
-        </div>
-      </div>
-
-      <label for="notes">Observações <span class="optional">(opcional)</span></label>
-      <textarea id="notes" name="notes" rows="2" placeholder="Alguma necessidade ou dúvida?"></textarea>
-
-      <button class="button button-primary submit-button" type="submit">
-        Enviar solicitação no WhatsApp <span>↗</span>
-      </button>
-
-      <p class="form-legal">
-        O envio é uma solicitação, não uma confirmação automática.
-        Sua reserva só será confirmada após o retorno da pousada.
-      </p>
-
-      <p class="form-error" id="formError" role="alert" hidden></p>
-    </form>
-  </section>
-
-  <!-- LOCALIZAÇÃO ATUALIZADA -->
-  <section class="location-section" id="localizacao">
-    <div class="section-wrap location-inner">
-      <div>
-        <p class="eyebrow"><span></span> VENHA SENTIR UBATUBA</p>
-
-        <h2>O litoral paulista tem<br><em>um lugar pra você.</em></h2>
-
-        <p>
-          A Pousada Futuro está localizada no Condomínio Sapê,
-          em Ubatuba, litoral norte de São Paulo. Consulte nossa
-          equipe e planeje sua chegada.
-        </p>
-
-        <a
-          class="button button-light"
-          href="https://www.google.com/maps/dir/?api=1&destination=Condom%C3%ADnio+Sap%C3%AA%2C+Rua+Sete%2C+46%2C+Ubatuba%2C+SP%2C+11682-166"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Como chegar <span>↗</span>
-        </a>
-
-        <p class="location-address">
-          <strong>Endereço:</strong><br>
-          Condomínio Sapê — Rua Sete, 46<br>
-          Ubatuba – SP, CEP 11682-166
-        </p>
-      </div>
-
-      <div class="location-card">
-        <span class="location-pin">⌖</span>
-        <small>NOS ENCONTRE EM</small>
-        <strong>Ubatuba</strong>
-        <span>São Paulo · Brasil</span>
-
-        <div class="location-card-line"></div>
-
-        <small>ENDEREÇO COMPLETO</small>
-        <p>
-          Condomínio Sapê<br>
-          Rua Sete, 46<br>
-          Ubatuba – SP<br>
-          CEP 11682-166
-        </p>
-
-        <a
-          href="https://www.google.com/maps/search/?api=1&query=Condom%C3%ADnio+Sap%C3%AA%2C+Rua+Sete%2C+46%2C+Ubatuba%2C+SP%2C+11682-166"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ver no Google Maps ↗
-        </a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- RODAPÉ -->
-<footer class="site-footer">
-  <a class="brand footer-brand" href="#inicio" aria-label="Pousada Futuro - início">
-    <span class="brand-mark" aria-hidden="true"></span>
-    <span>
-      <strong>Pousada Futuro</strong>
-      <small>UBATUBA • SÃO PAULO</small>
-    </span>
-  </a>
-
-  <p>Um respiro bom no meio da vida.</p>
-
-  <div class="footer-links">
-    <a href="#acomodacoes">Acomodações</a>
-    <a href="#reservar">Reservas</a>
-    <a href="#" id="footerWhatsApp">WhatsApp</a>
-  </div>
-
-  <small class="copyright">
-    © <span id="year"></span> Pousada Futuro. Todos os direitos reservados.
-  </small>
-</footer>
-
-<a class="floating-whatsapp" id="floatingWhatsApp" href="#" target="_blank" rel="noopener" aria-label="Fale com a Pousada Futuro pelo WhatsApp">
-  <span>◔</span>
-  <small>Fale com a gente</small>
-</a>
-
-<script src="script.js"></script>
+  <a class="floating-whatsapp" id="floatingWhatsApp" href="#" target="_blank" rel="noopener" aria-label="Fale com a Pousada Futuro pelo WhatsApp"><span>◔</span><small>Fale com a gente</small></a>
+  <script src="script.js"></script>
 </body>
 </html>
