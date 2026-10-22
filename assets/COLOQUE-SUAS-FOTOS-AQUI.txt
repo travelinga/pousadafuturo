@@ -1,0 +1,1 @@
+Coloque nesta pasta suas fotos próprias e referencie-as no style.css.
