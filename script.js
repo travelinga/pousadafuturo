@@ -1,14 +1,8 @@
 
 /*
-=========================================
- POUSADA FUTURO — CONFIGURAÇÕES
- Todas as imagens ficam na raiz do projeto.
-=========================================
-
-Para editar o WhatsApp, informe:
-55 + DDD + número, somente números.
-
-Exemplo: 5515999999999
+  POUSADA FUTURO — CONSULTA DE DATAS E PREÇOS
+  Os preços são referências iniciais por diária.
+  O valor final e a disponibilidade são confirmados pela pousada.
 */
 
 const CONFIG = {
@@ -16,16 +10,13 @@ const CONFIG = {
   cidade: "Ubatuba - SP",
   whatsapp: "5515981689760",
 
-  endereco: "Adicione o endereço completo da pousada aqui",
-
+  // Valores de referência por diária, em reais.
   quartos: {
-    "Bangalô": "Consulte",
-    "Quarto Varanda": "Consulte",
-    "Quarto Casal": "Consulte",
-    "Quarto Família": "Consulte"
-  },
-
-  mapaUrl: ""
+    "Bangalô": 550,
+    "Quarto Varanda": 140,
+    "Quarto Casal": 160,
+    "Quarto Família": 300
+  }
 };
 
 /* =========================================
@@ -41,7 +32,7 @@ function openWhatsApp(message) {
 }
 
 /* =========================================
-   DATAS
+   FORMATAÇÃO DE DATAS E VALORES
 ========================================= */
 
 function formatDate(dateString) {
@@ -51,16 +42,16 @@ function formatDate(dateString) {
   return `${day}/${month}/${year}`;
 }
 
-function getLocalDateString(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-
-  return `${year}-${month}-${day}`;
+function formatMoney(value) {
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    maximumFractionDigits: 2
+  }).format(value);
 }
 
 /* =========================================
-   MENU PARA CELULAR
+   MENU MOBILE
 ========================================= */
 
 const menuToggle = document.getElementById("menuToggle");
@@ -82,107 +73,62 @@ if (menuToggle && mainNav) {
   mainNav.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       mainNav.classList.remove("open");
-
       menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Abrir menu");
       menuToggle.textContent = "☰";
     });
   });
 }
 
 /* =========================================
-   GALERIA DOS QUARTOS
-   Clicar numa miniatura troca a foto principal.
+   GALERIAS DAS ACOMODAÇÕES
 ========================================= */
 
-document.querySelectorAll(".room-card").forEach(card => {
-  const mainPhoto = card.querySelector(".room-main-photo");
-  const thumbnails = card.querySelectorAll(".room-thumbnails img");
+document.querySelectorAll("[data-gallery]").forEach(gallery => {
+  const mainImage = gallery.querySelector(".room-gallery-main");
 
-  if (!mainPhoto || thumbnails.length === 0) return;
+  gallery.querySelectorAll(".room-thumb").forEach(button => {
+    button.addEventListener("click", () => {
+      const image = button.dataset.image;
 
-  thumbnails.forEach(thumbnail => {
-    thumbnail.setAttribute("tabindex", "0");
-    thumbnail.setAttribute("role", "button");
+      if (!image || !mainImage) return;
 
-    if (thumbnail.alt) {
-      thumbnail.setAttribute(
-        "aria-label",
-        `Ver foto: ${thumbnail.alt}`
-      );
-    }
+      mainImage.src = image;
 
-    function selectPhoto() {
-      const newSource = thumbnail.getAttribute("src");
-
-      if (!newSource) return;
-
-      mainPhoto.setAttribute("src", newSource);
-
-      if (thumbnail.alt) {
-        mainPhoto.setAttribute("alt", thumbnail.alt);
-      }
-
-      thumbnails.forEach(image => {
-        image.style.outline = "none";
-        image.removeAttribute("aria-current");
+      gallery.querySelectorAll(".room-thumb").forEach(item => {
+        item.classList.remove("active");
       });
 
-      thumbnail.style.outline = "3px solid #087e8b";
-      thumbnail.style.outlineOffset = "-3px";
-      thumbnail.setAttribute("aria-current", "true");
-    }
-
-    thumbnail.addEventListener("click", selectPhoto);
-
-    thumbnail.addEventListener("keydown", event => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        selectPhoto();
-      }
+      button.classList.add("active");
     });
   });
-
-  // Destaca a primeira miniatura, correspondente à foto inicial.
-  if (thumbnails[0]) {
-    thumbnails[0].style.outline = "3px solid #087e8b";
-    thumbnails[0].style.outlineOffset = "-3px";
-    thumbnails[0].setAttribute("aria-current", "true");
-  }
 });
 
 /* =========================================
-   PREÇOS DAS ACOMODAÇÕES
+   DATAS DA HOSPEDAGEM
 ========================================= */
 
-document.querySelectorAll(".room-card").forEach(card => {
-  const title = card.querySelector("h3")?.textContent.trim();
-  const price = card.querySelector(".price-placeholder");
+function getLocalDateString(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
 
-  if (price && title && CONFIG.quartos[title]) {
-    price.textContent = CONFIG.quartos[title];
-  }
-});
+  return `${year}-${month}-${day}`;
+}
 
-/* =========================================
-   FORMULÁRIO DE RESERVA
-========================================= */
+const localToday = getLocalDateString();
 
-const bookingForm = document.getElementById("bookingForm");
 const checkin = document.getElementById("checkin");
 const checkout = document.getElementById("checkout");
+const roomType = document.getElementById("roomType");
+const bookingForm = document.getElementById("bookingForm");
+const formError = document.getElementById("formError");
 
 if (checkin && checkout) {
-  const today = getLocalDateString();
-
-  checkin.min = today;
-  checkout.min = today;
+  checkin.min = localToday;
+  checkout.min = localToday;
 
   checkin.addEventListener("change", () => {
-    if (!checkin.value) {
-      checkout.min = today;
-      return;
-    }
+    if (!checkin.value) return;
 
     const nextDay = new Date(`${checkin.value}T12:00:00`);
     nextDay.setDate(nextDay.getDate() + 1);
@@ -198,13 +144,11 @@ if (checkin && checkout) {
 }
 
 /* =========================================
-   SELECIONAR ACOMODAÇÃO AUTOMATICAMENTE
+   SELECIONAR ACOMODAÇÃO
 ========================================= */
 
-document.querySelectorAll("[data-room]").forEach(link => {
+document.querySelectorAll(".room-consult[data-room]").forEach(link => {
   link.addEventListener("click", () => {
-    const roomType = document.getElementById("roomType");
-
     if (roomType) {
       roomType.value = link.dataset.room;
     }
@@ -212,39 +156,33 @@ document.querySelectorAll("[data-room]").forEach(link => {
 });
 
 /* =========================================
-   ENVIAR PEDIDO DE RESERVA
+   FORMULÁRIO DE CONSULTA
 ========================================= */
 
 if (bookingForm) {
   bookingForm.addEventListener("submit", event => {
     event.preventDefault();
 
-    const error = document.getElementById("formError");
-
-    if (error) {
-      error.hidden = true;
-      error.textContent = "";
+    if (formError) {
+      formError.hidden = true;
+      formError.textContent = "";
     }
 
-    const name =
-      document.getElementById("guestName")?.value.trim() || "";
+    const nameField = document.getElementById("guestName");
+    const guestsField = document.getElementById("guests");
+    const notesField = document.getElementById("notes");
 
-    const arrival = checkin?.value || "";
-    const departure = checkout?.value || "";
-
-    const guests =
-      document.getElementById("guests")?.value || "";
-
-    const room =
-      document.getElementById("roomType")?.value || "";
-
-    const notes =
-      document.getElementById("notes")?.value.trim() || "";
+    const name = nameField ? nameField.value.trim() : "";
+    const arrival = checkin ? checkin.value : "";
+    const departure = checkout ? checkout.value : "";
+    const guests = guestsField ? guestsField.value : "";
+    const room = roomType ? roomType.value : "";
+    const notes = notesField ? notesField.value.trim() : "";
 
     function showError(message, field) {
-      if (error) {
-        error.textContent = message;
-        error.hidden = false;
+      if (formError) {
+        formError.textContent = message;
+        formError.hidden = false;
       }
 
       if (field) field.focus();
@@ -253,56 +191,85 @@ if (bookingForm) {
     if (!name || !arrival || !departure) {
       showError(
         "Preencha seu nome e as datas de entrada e saída.",
-        !name
-          ? document.getElementById("guestName")
-          : !arrival
-            ? checkin
-            : checkout
+        !name ? nameField : (!arrival ? checkin : checkout)
       );
+      return;
+    }
 
+    if (arrival < localToday) {
+      showError(
+        "Escolha uma data de check-in a partir de hoje.",
+        checkin
+      );
       return;
     }
 
     if (departure <= arrival) {
       showError(
-        "A data de check-out precisa ser posterior à data de check-in.",
+        "O check-out precisa ser posterior ao check-in.",
         checkout
       );
-
       return;
     }
 
-    const today = getLocalDateString();
-
-    if (arrival < today) {
+    if (!guests) {
       showError(
-        "Escolha uma data de check-in a partir de hoje.",
-        checkin
+        "Informe a quantidade de hóspedes.",
+        guestsField
       );
-
       return;
     }
 
-    const message = [
+    if (!room) {
+      showError(
+        "Selecione a acomodação desejada.",
+        roomType
+      );
+      return;
+    }
+
+    /* Calcular a quantidade de noites */
+    const arrivalDate = new Date(`${arrival}T12:00:00`);
+    const departureDate = new Date(`${departure}T12:00:00`);
+
+    const nights = Math.round(
+      (departureDate - arrivalDate) / 86400000
+    );
+
+    /* Valor de referência da acomodação */
+    const baseRate = CONFIG.quartos[room];
+
+    const baseTotal = Number.isFinite(baseRate)
+      ? baseRate * nights
+      : null;
+
+    const lines = [
       `Olá! Gostaria de consultar uma reserva na ${CONFIG.nome}.`,
       "",
       `Nome: ${name}`,
       `Check-in: ${formatDate(arrival)}`,
       `Check-out: ${formatDate(departure)}`,
+      `Duração: ${nights} ${nights === 1 ? "diária" : "diárias"}`,
       `Hóspedes: ${guests}`,
       `Acomodação desejada: ${room}`,
+      Number.isFinite(baseRate)
+        ? `Valor de referência anunciado: ${formatMoney(baseRate)} por diária`
+        : "",
+      baseTotal !== null
+        ? `Referência para ${nights} ${nights === 1 ? "diária" : "diárias"}: ${formatMoney(baseTotal)} (não é cotação final; depende da temporada)`
+        : "",
       notes ? `Observações: ${notes}` : "",
       "",
-      "Poderiam confirmar a disponibilidade, o valor total e o valor do sinal via Pix?",
+      "Poderiam confirmar a disponibilidade e o valor final para essas datas, considerando a temporada e a quantidade de hóspedes?",
       "Entendo que esta mensagem é uma solicitação e que a reserva só estará confirmada após o retorno da pousada."
-    ].filter(Boolean).join("\n");
+    ].filter(Boolean);
 
-    openWhatsApp(message);
+    openWhatsApp(lines.join("\n"));
   });
 }
 
 /* =========================================
-   LINKS GERAIS DO WHATSAPP
+   BOTÕES DE WHATSAPP
 ========================================= */
 
 const genericMessage =
@@ -311,49 +278,19 @@ const genericMessage =
 ["locationWhatsApp", "footerWhatsApp", "floatingWhatsApp"].forEach(id => {
   const element = document.getElementById(id);
 
-  if (!element) return;
-
-  element.href = whatsappUrl(genericMessage);
-  element.target = "_blank";
-  element.rel = "noopener noreferrer";
+  if (element) {
+    element.href = whatsappUrl(genericMessage);
+    element.target = "_blank";
+    element.rel = "noopener noreferrer";
+  }
 });
 
 /* =========================================
    ANO AUTOMÁTICO NO RODAPÉ
 ========================================= */
 
-const yearElement = document.getElementById("year");
+const year = document.getElementById("year");
 
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
-}
-
-/* =========================================
-   ENDEREÇO
-========================================= */
-
-if (
-  CONFIG.endereco &&
-  CONFIG.endereco !== "Adicione o endereço completo da pousada aqui"
-) {
-  const addressParagraph = document.querySelector(".location-card p");
-
-  if (addressParagraph) {
-    addressParagraph.textContent = CONFIG.endereco;
-  }
-}
-
-/* =========================================
-   LINK OPCIONAL DO MAPA
-========================================= */
-
-if (CONFIG.mapaUrl) {
-  const locationButton = document.getElementById("locationWhatsApp");
-
-  if (locationButton) {
-    locationButton.href = CONFIG.mapaUrl;
-    locationButton.textContent = "Ver no mapa ↗";
-    locationButton.target = "_blank";
-    locationButton.rel = "noopener noreferrer";
-  }
+if (year) {
+  year.textContent = new Date().getFullYear();
 }
