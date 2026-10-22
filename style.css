@@ -1289,3 +1289,17 @@ img {
     font-size: 10px;
   }
 }
+
+/* ENDEREÇO DA POUSADA */
+.location-address {
+  margin-top: 24px;
+  line-height: 1.8;
+}
+
+.location-card a {
+  display: inline-block;
+  margin-top: 16px;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
