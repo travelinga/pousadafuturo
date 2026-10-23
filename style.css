@@ -155,7 +155,7 @@ img {
   position: relative;
   display: block;
   overflow: hidden;
-  background: #2e7778;
+  background: #f6f1e8;
 }
 
 .hero-banner-only {
@@ -166,11 +166,17 @@ img {
 .hero-banner-only .hero-image {
   position: relative;
   inset: auto;
+  display: block;
   width: 100%;
-  height: clamp(220px, 42vw, 560px);
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 16 / 7;
   transform: none;
+
+  background-image: url("banner.jpeg");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .hero-banner-only .hero-shade,
@@ -258,6 +264,7 @@ img {
   align-items: center;
   gap: 26px;
 }
+
 
 .button {
   display: inline-flex;
