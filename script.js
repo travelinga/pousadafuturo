@@ -1,4 +1,3 @@
-```javascript
 /*
   POUSADA FUTURO — CONSULTA DE DATAS E PREÇOS
   Os preços são referências iniciais por diária.
