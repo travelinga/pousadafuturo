@@ -880,9 +880,12 @@ img {
 }
 
 .quote-image {
-  background-image: url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80');
+  background-image: url("praia-ubatuba.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  min-height: 420px;
+  width: 100%;
 }
 
 .quote-content {
