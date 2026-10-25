@@ -128,7 +128,6 @@ document.querySelectorAll("[data-room-booking]").forEach(form => {
 
   if (!checkinField || !checkoutField || !guestsField) return;
 
-  // Impede selecionar datas anteriores a hoje.
   checkinField.min = localToday;
   checkoutField.min = localToday;
 
@@ -423,4 +422,3 @@ const year = document.getElementById("year");
 if (year) {
   year.textContent = new Date().getFullYear();
 }
-```
