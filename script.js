@@ -7,7 +7,7 @@
 const CONFIG = {
   nome: "Pousada Futuro",
   cidade: "Ubatuba - SP",
-  whatsapp: "5515981689760",
+  whatsapp: "5512997575528",
 
   quartos: {
     "Bangalô": 550,
